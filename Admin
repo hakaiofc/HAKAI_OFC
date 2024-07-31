@@ -5495,7 +5495,7 @@ end
 					  
 				 tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(0, 10000, 0)})
 				 tween:Play()
-				 wait(1.5)
+				 wait(0.1)
 				 tween:Pause()
 				 game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
 				 wait()
@@ -5591,7 +5591,7 @@ end
 					wait()
 				end
 				 CF = Player.Character.HumanoidRootPart.CFrame
-			 player.CharacterAdded:wait(1):waitForChild("HumanoidRootPart").CFrame = CF
+			 player.CharacterAdded:wait(0.1):waitForChild("HumanoidRootPart").CFrame = CF
  end)
  
 	 cmd.add({"kidnap"}, {"kidnap <player>", "Kidnaps a player"}, function(...)
@@ -5602,7 +5602,7 @@ end
 	   local newPosition = currentCFrame.p + offset
 	   local newCFrame = CFrame.new(newPosition, currentCFrame.lookVector)
 		 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newCFrame
-		 wait(1)
+		 wait(0.1)
 	   local player = game.Players.LocalPlayer
 	 local targetPlayer = Target
 
@@ -5671,7 +5671,7 @@ end
 						TCharacter.HumanoidRootPart.CFrame
 						wait()
 					end
-					wait(0.7)
+					wait(0.1)
 	 local targetPosition = player.Character.HumanoidRootPart.Position + Vector3.new(0, 0, 1000)
 	 
 	 local tweenInfo = TweenInfo.new(4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
@@ -5861,10 +5861,10 @@ end
 					TCharacter.HumanoidRootPart.CFrame
 					wait()
 				end
-				player.CharacterAdded:wait(1)
+				player.CharacterAdded:wait(0.1)
 				wait(0.2)
  getRoot().CFrame= getPlr(Target).Character.Head.CFrame
- wait(0.05)
+ wait(0.01)
  until Control == false
  end)
  
@@ -5883,20 +5883,20 @@ end
 	 if Player ~= nil and not Admin[Player.UserId] then
 		 Admin[Player.UserId] = {Player = Player}
 		 ChatMessage("/w "..Player.Name.." [Hakai Admin] You've got admin. Prefix: ';'")
-		 wait(0.2)
+		 wait(0.01)
 		 ChatMessage("/w "..Player.Name.." [Hakai Admin Commands] glue, unglue, fling, fling2, spinfling, unspinfling, fcd, fti, fpp, fireremotes, holdhat")
 		 ChatMessage("/w "..Player.Name.." reset, commitoof, seizure, unseizure, toolorbit, lay, fall, toolspin, hatspin, sit, joke, kanye")
 		 Notify({
 			 Description = "" .. Player.Name .. " has now been whitelisted to use commands";
 			 Title = "Hakai Admin";
-			 Duration = 15;
+			 Duration = 5;
 			 
 			 });
 	 else
 		 Notify({
 			 Description = "No player found";
 			 Title = "Hakai Admin";
-			 Duration = 15;
+			 Duration = 5;
 			 
 			 });
 	 end
@@ -5912,14 +5912,14 @@ end
 					 Notify({
 				 Description = "" .. Player.Name .. " is no longer an admin";
 				 Title = "Hakai Admin";
-				 Duration = 15;
+				 Duration = 5;
 				 
 				 });
 			 else
 						 Notify({
 				 Description = "Player not found";
 				 Title = "Hakai Admin";
-				 Duration = 15;
+				 Duration = 5;
 				 
 				 });
 			 end
@@ -6059,7 +6059,7 @@ end
 	game.CoreGui:FindFirstChild("RobloxPromptGui"):FindFirstChild("promptOverlay").DescendantAdded:Connect(function(Err)
 			if Err.Name == "ErrorTitle" then
 				Err:GetPropertyChangedSignal("Text"):Connect(function()
-					if Err.Text:sub(0, 12) == "Disconnected" then
+					if Err.Text:sub() == "Disconnected" then
 						if #Players:GetPlayers() <= 1 then
 							Players.LocalPlayer:Kick("\nRejoining...")
 							wait()
@@ -6772,7 +6772,7 @@ end
 			 
 			 local angular = Instance.new("BodyAngularVelocity")
 			 angular.AngularVelocity = Vector3.new(0, math.random(100, 160)/16, 0)
-			 angular.MaxTorque = Vector3.new(0, 400000, 0)
+			 angular.MaxTorque = Vector3.new(0, 400000000, 0)
 			 lock(angular, handle);
 		 end
 	 end
@@ -6861,9 +6861,9 @@ end
  
  repeat wait()
 	 game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
-	 wait(0.05)
+	 wait()
 	  game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
-	  wait(0.05)
+	  wait()
  until FakeLag == false
  end)
  
@@ -7216,10 +7216,10 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 		 local boombox = game.Players.LocalPlayer.Character:FindFirstChildOfClass'Tool' or game.Players.LocalPlayer.Backpack:FindFirstChildOfClass'Tool'
 		 game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(1000))
 		 boombox.Parent = game.Players.LocalPlayer.Character
-		 wait(.3)
+		 wait()
 		 boombox.Parent = workspace
 		 game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(oldpos)
-		 wait(.5)
+		 wait()
 		 if boombox.Parent == workspace then
 				 game.Players.LocalPlayer.Character.Humanoid:EquipTool(boombox)
 				 wait(.3)
@@ -7480,7 +7480,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
  Notify({
  Description = "Copied the display name of " .. target.Name .. "";
  Title = "Hakai Admin";
- Duration = 7;
+ Duration = 3;
  
  });
  setclipboard(target.DisplayName)
@@ -7584,7 +7584,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 			 tool.Parent = character
 		 end
 	 end
-	 wait(0.5)
+	 wait(0.1)
 	 for _, tool in pairs(character:GetChildren()) do
 		 if tool:IsA("Tool") then
 			 wrap(function()
@@ -7602,7 +7602,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 						 
 						 local angular = Instance.new("BodyAngularVelocity")
 						 angular.AngularVelocity = Vector3.new(0, math.random(100, 160)/16, 0)
-						 angular.MaxTorque = Vector3.new(0, 400000, 0)
+						 angular.MaxTorque = Vector3.new(0, 4000000, 0)
 						 lock(angular, part);
 						 
 						 spawn(function()
@@ -7651,7 +7651,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 							 local y = tonumber(h) or math.random(-100, 100)/100/2
 							 rotY, rotX = rotY + n, rotX + n
 							 
-							 part.CollisionGroupId = math.random(1000000,9999999)
+							 part.CollisionGroupId = math.random(10000000,99999999)
 							 part.Anchored = false
 							 part.CFrame = head.CFrame * CFrame.new(0, 3, 0)
 							 
