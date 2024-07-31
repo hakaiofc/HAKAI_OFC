@@ -1,10 +1,6 @@
 --[[
-╭━╮╱╭╮╱╱╱╱╱╱╱╱╭╮╱╱╱╱╱╱╱╱╱╱╭━━━╮╱╭╮            |
-┃┃╰╮┃┃╱╱╱╱╱╱╱╱┃┃╱╱╱╱╱╱╱╱╱╱┃╭━╮┃╱┃┃            |
-┃╭╮╰╯┣━━┳╮╭┳━━┫┃╭━━┳━━┳━━╮┃┃╱┃┣━╯┣╮╭┳┳━╮     | Welcome to the Hakai Admin source, feel free to take a look around.
-┃┃╰╮┃┃╭╮┃╰╯┃┃━┫┃┃┃━┫━━┫━━┫┃╰━╯┃╭╮┃╰╯┣┫╭╮╮    | Enjoy.
-┃┃╱┃┃┃╭╮┃┃┃┃┃━┫╰┫┃━╋━━┣━━┃┃╭━╮┃╰╯┃┃┃┃┃┃┃┃    |
-╰╯╱╰━┻╯╰┻┻┻┻━━┻━┻━━┻━━┻━━╯╰╯╱╰┻━━┻┻┻┻┻╯╰╯    |
+Welcome to the Hakai Admin source, feel free to take a look around.
+Enjoy.
 --]]
 
  -- Waits until game is loaded
@@ -106,7 +102,7 @@
  
  local EditingPos = false
  
- local Power = 50000
+ local Power = 500000
  local Damping = 500
  
  local Mode = 1
@@ -336,8 +332,8 @@
  
  function sFLY(vfly)
 	 FLYING = false
-	 speedofthefly = 10
-	 speedofthevfly = 10
+	 speedofthefly = 100
+	 speedofthevfly = 100
 	 while not cmdlp or not cmdlp.Character or not cmdlp.Character:FindFirstChild('HumanoidRootPart') or not cmdlp.Character:FindFirstChild('Humanoid') or not cmdm do
 		  wait()
 	 end 
@@ -918,7 +914,7 @@
 			 -- Rotate hats around target player
 			 local function myCoroutine()
 				 while wait(-9e999) do
-					 Rotation = Rotation + (Speed / 20)
+					 Rotation = Rotation + (Speed / 200)
 					 if Rotation >= math.pi * 2 then
 						 Rotation = 0
 					 end
