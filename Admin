@@ -13182,21 +13182,21 @@ end)
 		 ["side"] 	= 0 --left is positive
 		 }
 		 
-		 airAccelerate 			= 10000
-		 airMaxSpeed 			= 2.4
-		 groundAccelerate 		= 250
-		 groundMaxVelocity 		= 20
-		 friction			 	= 10
+		 airAccelerate 			= 100000
+		 airMaxSpeed 			= 2.40
+		 groundAccelerate 		= 2500
+		 groundMaxVelocity 		= 200
+		 friction			 	= 100
 		 playerTorsoToGround 	= 3
 		 movementStickDistance 	= 0.5
-		 jumpVelocity 			= 52.5
-		 movementPositionForce	= 400000
-		 movementVelocityForce	= 300000
+		 jumpVelocity 			= 520.5
+		 movementPositionForce	= 4000000
+		 movementVelocityForce	= 3000000
 		 maxMovementPitch		= 0.6
 		 rayYLength				= playerTorsoToGround + movementStickDistance
 		 movementPositionD		= 125
-		 movementPositionP		= 14000
-		 movementVelocityP		= 1500
+		 movementPositionP		= 1400000
+		 movementVelocityP		= 150000
 		 gravity					= 0.4
 		 
 	 end
@@ -13781,9 +13781,9 @@ end)
 	 
 	 if invisRunning then return end
 		 invisRunning = true
-		 -- Full credit to AmokahFox @V3rmillion
+		 -- Full credit to HAKAI_OFC
 		 local Player = game.Players.LocalPlayer
-		 repeat wait(.1) until game.Players.LocalPlayer.Character
+		 repeat wait() until game.Players.LocalPlayer.Character
 		 local Character = game.Players.LocalPlayer.Character
 		 Character.Archivable = true
 		 local IsInvis = false
@@ -13905,7 +13905,7 @@ end)
 	 Players = game:GetService("Players")
 	 local speaker = game.Players.LocalPlayer
 	 workspace.CurrentCamera:remove()
-		 wait(.1)
+		 wait()
 		 game.Workspace.CurrentCamera.CameraSubject = speaker.Character:FindFirstChildWhichIsA('Humanoid')
 		 game.Workspace.CurrentCamera.CameraType = "Custom"
 		 game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
@@ -14068,7 +14068,7 @@ end)
 					 hidden = false
 				 end
 			 end)
-			 wait(1)
+			 wait(0.1)
 			 conn:Disconnect()
 			 if hidden and enabled then
 				 if public then
