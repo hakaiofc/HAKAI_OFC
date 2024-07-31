@@ -9,7 +9,7 @@ Enjoy.
  if (not game.IsLoaded(game)) then
 	 local Loaded = game.Loaded
 	 Loaded.Wait(Loaded);
-	 wait(0.5)
+	 wait()
  end
  
  -- Notification library
@@ -102,8 +102,8 @@ Enjoy.
  
  local EditingPos = false
  
- local Power = 500000
- local Damping = 500
+ local Power = 50000000000
+ local Damping = 50000
  
  local Mode = 1
  
@@ -332,8 +332,8 @@ Enjoy.
  
  function sFLY(vfly)
 	 FLYING = false
-	 speedofthefly = 100
-	 speedofthevfly = 100
+	 speedofthefly = 1000
+	 speedofthevfly = 1000
 	 while not cmdlp or not cmdlp.Character or not cmdlp.Character:FindFirstChild('HumanoidRootPart') or not cmdlp.Character:FindFirstChild('Humanoid') or not cmdm do
 		  wait()
 	 end 
@@ -986,7 +986,7 @@ Enjoy.
 			 if Mode == 3 then
 				 for i = 1, #Accessories do
 					 Accessories[i].Handle.BodyPosition.Position = TargetPos + Vector3.new(0, Height, 0)
-					 wait(.1)
+					 wait()
 				 end
 				 wait()
 				 Mode3()
@@ -1809,7 +1809,7 @@ print(Time)
 				repeat
 					if RootPart and THumanoid then
 						if BasePart.Velocity.Magnitude < 50 then
-							Angle = Angle + 100
+							Angle = Angle + 1000000
 	 
 							FPos(BasePart, CFrame.new(0, 1.5, 0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle),0 ,0))
 							task.wait()
@@ -1862,7 +1862,7 @@ print(Time)
 					else
 						break
 					end
-				until BasePart.Velocity.Magnitude > 500 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or THumanoid.Sit or Humanoid.Health <= 0 or tick() > Time + TimeToWait
+				until BasePart.Velocity.Magnitude > 5000000 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or THumanoid.Sit or Humanoid.Health <= 0 or tick() > Time + TimeToWait
 			end
 			
 			workspace.FallenPartsDestroyHeight = 0/0
@@ -2067,7 +2067,7 @@ print(Time)
 					 end
 					 if hiddenfling then
 						 vel = hrp.Velocity
-						 hrp.Velocity = vel * 10000 + Vector3.new(0, 10000, 0)
+						 hrp.Velocity = vel * 1000000 + Vector3.new(0, 10000, 0)
 						 game:GetService("RunService").RenderStepped:Wait()
 						 if c and c.Parent and hrp and hrp.Parent then
 							 hrp.Velocity = vel
@@ -2123,7 +2123,7 @@ print(Time)
 					 end
 					 if hiddenfling then
 						 vel = hrp.Velocity
-						 hrp.Velocity = vel * 10000 + Vector3.new(0, 10000, 0)
+						 hrp.Velocity = vel * 1000000 + Vector3.new(0, 10000, 0)
 						 game:GetService("RunService").RenderStepped:Wait()
 						 if c and c.Parent and hrp and hrp.Parent then
 							 hrp.Velocity = vel
@@ -2184,9 +2184,9 @@ print(Time)
 		 end
 		 sFLY(true)
 		 speedofthevfly = 1
-		 wait(0.3)
+		 wait()
 		 Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldcframe
-		 wait(0.13)
+		 wait()
 				 Player.Character.Humanoid:SetStateEnabled("Seated", true)
 					 Player.Character.Humanoid.Sit = false
 		 FLYING = false
@@ -2277,12 +2277,12 @@ print(Time)
 		 end)
 		 
 		 respawn()
-		 wait(.1)
+		 wait()
 	 until
 		 #grabbed >= amt or ab ~= abort
 	 
 	 repeat wait() until localPlayer.Character and tostring(localPlayer.Character) ~= "respawn_" and localPlayer.Character == character
-	 wait(.2)
+	 wait()
 	 
 	 repeat wait() until localPlayer:FindFirstChildWhichIsA("Backpack") or ab ~= abort
 	 local backpack = localPlayer:FindFirstChildWhichIsA("Backpack")
@@ -2293,10 +2293,10 @@ print(Time)
 	 end
 	 wrap(function()
 		 repeat wait() until character.PrimaryPart
-		 wait(.2)
+		 wait()
 		 character:SetPrimaryPartCFrame(lastCF)
 	 end)
-	 wait(.2)
+	 wait()
 	 return grabbed
  end
  
@@ -2309,7 +2309,7 @@ print(Time)
 		 local decoded = HttpService:JSONDecode(final)
 		 
 			  game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(decoded.setup, 'All')
-		 wait(2)
+		 wait(0.2)
 			  game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(decoded.punchline, 'All')
    end)()
  
@@ -2328,13 +2328,13 @@ print(Time)
 	 getChar().HumanoidRootPart.CFrame = target.Character.Humanoid.RootPart.CFrame * CFrame.new(0, 1, 4)
  local message = "Hey " .. target.Name .. ""
   game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, 'All')
- wait(1)
+ wait(0.1)
   game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('Sorry to tell you this, but..', 'All')
- wait(1)
+ wait(0.1)
   game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('You are an idiot!', 'All')
-  wait(1)
+  wait(0.1)
    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer('HAHAHA!', 'All')
- wait(1)
+ wait(0.1)
 	 getChar():WaitForChild("HumanoidRootPart").CFrame = old
  
  
@@ -2516,7 +2516,7 @@ print(Time)
 				 local Character = LocalPlayer.Character
 				 if Character and Character.PrimaryPart then
 					 local Distance = (Character.PrimaryPart.Position-Part.Position).Magnitude
-					 if Distance > 1000 then
+					 if Distance > 10000 then
 						 Network["Output"].Send(warn,"RetainPart Warning : PartOwnership not applied to BasePart "..Part:GetFullName()..", as it is more than "..gethiddenproperty(LocalPlayer,"MaximumSimulationRadius").." studs away.")
 						 return false
 					 end
@@ -2573,7 +2573,7 @@ print(Time)
 								 local Character = LocalPlayer.Character;
 								 if Character and Character.PrimaryPart then
 									 local Distance = (Character.PrimaryPart.Position - Part.Position).Magnitude
-									 if Distance > 1000 then
+									 if Distance > 10000 then
 										 Network["Output"].Send(warn,"PartOwnership Warning : PartOwnership not applied to BasePart "..Part:GetFullName()..", as it is more than "..gethiddenproperty(LocalPlayer,"MaximumSimulationRadius").." studs away.")
 										 Lost = true;
 										 Network["RemovePart"](Part)
@@ -3017,7 +3017,7 @@ print(Time)
 		 game:FindService("RunService").Heartbeat:wait()
 	game:FindService("RunService").Heartbeat:wait()
 		   until Tool.Parent ~= Character or not TPlayer or not TRootPart or THumanoid.Health <= 0 or os.time() > Timer + .20
-			wait(0.4)
+			wait()
 			 Player.Character = nil
 			 NewHumanoid.Health = 0
 			 player.CharacterAdded:wait(1)
@@ -3159,10 +3159,10 @@ print(Time)
 	 for i, tool in pairs(tools) do
 		 wait()
 		 spawn(function()
-			 wait(0.1)
+			 wait()
 			 tool.Parent = character
 			 tool.CanBeDropped = true
-			 wait(0.1)
+			 wait()
 			 for _, mesh in pairs(tool:GetDescendants()) do
 				 if mesh:IsA("DataModelMesh") then
 					 mesh:Destroy()
@@ -3173,15 +3173,15 @@ print(Time)
 					 weld:Destroy()
 				 end
 			 end
-			 wait(0.1)
+			 wait()
 			 tool.Parent = workspace
-			 wait(0.1)
+			 wait()
 			 local cf, p = CFrame.new(), character:FindFirstChild("HumanoidRootPart") or character:FindFirstChild("Head")
 	 if p then
 		 cf = p.CFrame
 	 end
 	 respawn()
-	 player.CharacterAdded:wait(1); wait(0.2);
+	 player.CharacterAdded:wait(0.1); wait();
 	 character:WaitForChild("HumanoidRootPart").CFrame = cf
 		 end)
 	 end
@@ -3459,9 +3459,9 @@ print(Time)
 							 for i= 1,50,1 do
 				 print('pee'..i)
 				 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,9e+18,0)
-				 wait(.04)
+				 wait()
 				 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldCF
-				 wait(.04)
+				 wait()
 				 end
 				else
 					Player.Character.HumanoidRootPart.CFrame =
@@ -3471,7 +3471,7 @@ print(Time)
 					TCharacter.HumanoidRootPart.CFrame
 					wait()
 				end
-				player.CharacterAdded:wait(1):waitForChild("HumanoidRootPart").CFrame = CF
+				player.CharacterAdded:wait(0.1):waitForChild("HumanoidRootPart").CFrame = CF
  end)
  
  cmd.add({"void"}, {"void <player>", "Kill the given players without FE god"}, function(...)
@@ -3527,7 +3527,7 @@ print(Time)
 	 firetouchinterest(MainTool.Handle, TRootPart, 1)
 	 wait()
  until flag
-				 wait(0.2)
+				 wait()
  Player.Character.HumanoidRootPart.CFrame = CFrame.new(0,-1000,0)
  else
  Player.Character.HumanoidRootPart.CFrame =
@@ -3634,7 +3634,7 @@ print(Time)
 					TCharacter.HumanoidRootPart.CFrame
 					wait()
 				end
-				player.CharacterAdded:wait(1):waitForChild("HumanoidRootPart").CFrame = CF
+				player.CharacterAdded:wait(0.1):waitForChild("HumanoidRootPart").CFrame = CF
  end)
  
  massplay = false
@@ -3939,7 +3939,7 @@ print(Time)
 				 Player.Character.HumanoidRootPart.CFrame = CFrame.new(XC,1000,ZC)
 				 wait()
 			 end
-			 wait(.3)
+			 wait()
 			 Player.Character:SetPrimaryPartCFrame(CF)
 			 if Humanoid.RigType == Enum.HumanoidRigType.R6 then
 				 Character["Right Arm"].RightGrip:Destroy()
@@ -4035,7 +4035,7 @@ print(Time)
 	
 	 flyg.CFrame = workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((f+0)*50*Speed/maxspeed),0,0) 
 	  flyv.Velocity = workspace.CurrentCamera.CoordinateFrame.LookVector * Speed
-	  wait(0.1)
+	  wait()
 	  
 	  if Speed < 0 then
 	  Speed = 0
@@ -4210,7 +4210,7 @@ print(Time)
 	  getgenv().currentnormal = game:GetService("Workspace").Gravity
 	  game:GetService("Workspace").Gravity = 196.2
 	  game:GetService("Players").LocalPlayer.Character:PivotTo(game:GetService("Players").LocalPlayer.Character:GetPivot() * CFrame.Angles(2, 0, 0))
-	  wait(0.5)
+	  wait(0.1)
 	  game:GetService("Players").LocalPlayer.Character.Humanoid.PlatformStand = true
 	  game.Players.LocalPlayer.Character.Animate.Disabled = true
 	  
@@ -4551,7 +4551,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/m
  });
 				 ANTIAFK = game.Players.LocalPlayer.Idled:connect(function()
 					 game:FindService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-					 task.wait(1)
+					 task.wait(0.1)
 					 game:FindService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 					 end)
 				 end)
@@ -4652,7 +4652,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/m
  end)
 
  game.Players.LocalPlayer.CharacterAdded:connect(function()
- wait(0.6)
+ wait(0.1)
  needsrespawning = false
  haspos = false
  end)
@@ -5099,7 +5099,7 @@ until npcfollowloop == false
  Duration = 5;
  
  });
-	 --- made by joshclark756#7155
+	 --- made by HAKAI_OFC
  local mouse = game.Players.LocalPlayer:GetMouse()
  local uis = game:GetService("UserInputService")
  mouse.Button1Down:Connect(function()
@@ -5157,7 +5157,7 @@ until npcfollowloop == false
  Duration = 5;
  
  });
-	 -- made by joshclark756#7155
+	 -- made by HAKAI_OFC
  -- Variables
  local mouse = game.Players.LocalPlayer:GetMouse()
  local uis = game:GetService("UserInputService")
@@ -5495,7 +5495,7 @@ end
 					  
 				 tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(0, 10000, 0)})
 				 tween:Play()
-				 wait(0.1)
+				 wait()
 				 tween:Pause()
 				 game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
 				 wait()
@@ -5591,7 +5591,7 @@ end
 					wait()
 				end
 				 CF = Player.Character.HumanoidRootPart.CFrame
-			 player.CharacterAdded:wait(0.1):waitForChild("HumanoidRootPart").CFrame = CF
+			 player.CharacterAdded:wait():waitForChild("HumanoidRootPart").CFrame = CF
  end)
  
 	 cmd.add({"kidnap"}, {"kidnap <player>", "Kidnaps a player"}, function(...)
@@ -5602,7 +5602,7 @@ end
 	   local newPosition = currentCFrame.p + offset
 	   local newCFrame = CFrame.new(newPosition, currentCFrame.lookVector)
 		 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = newCFrame
-		 wait(0.1)
+		 wait()
 	   local player = game.Players.LocalPlayer
 	 local targetPlayer = Target
 
@@ -5622,7 +5622,7 @@ end
 	 end
 	 
 		 startTeleportTween()
-	  wait(2)
+	  wait(0.2)
 		  local TPlayer = Target
 					TRootPart = TPlayer.Character.HumanoidRootPart
 					local Character = Player.Character
@@ -5671,7 +5671,7 @@ end
 						TCharacter.HumanoidRootPart.CFrame
 						wait()
 					end
-					wait(0.1)
+					wait()
 	 local targetPosition = player.Character.HumanoidRootPart.Position + Vector3.new(0, 0, 1000)
 	 
 	 local tweenInfo = TweenInfo.new(4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
@@ -5862,9 +5862,9 @@ end
 					wait()
 				end
 				player.CharacterAdded:wait(0.1)
-				wait(0.2)
+				wait()
  getRoot().CFrame= getPlr(Target).Character.Head.CFrame
- wait(0.01)
+ wait()
  until Control == false
  end)
  
@@ -6772,7 +6772,7 @@ end
 			 
 			 local angular = Instance.new("BodyAngularVelocity")
 			 angular.AngularVelocity = Vector3.new(0, math.random(100, 160)/16, 0)
-			 angular.MaxTorque = Vector3.new(0, 400000000, 0)
+			 angular.MaxTorque = Vector3.new(0, 90000000000, 0)
 			 lock(angular, handle);
 		 end
 	 end
@@ -7284,7 +7284,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
  
  
  cmd.add({"animspoofer", "animationspoofer", "spoofanim", "animspoof"}, {"animationspoofer (animspoof, spoofanim)", "Loads up an animation spoofer, spoofs animations that use rbxassetid"}, function()
- loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/HakaiAdmin/main/AnimationSpoofer"))()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/AnimationSpoofer"))()
  end)
  
  cmd.add({"tooldance", "td"}, {"tooldance <mode> <size>", "Make your tools dance\nModes: tor/sph/inf/rng/whl/wht/voi"}, function(mode, size)
@@ -7442,9 +7442,9 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
  game.Players.LocalPlayer.Backpack.BoomBox.GripPos =  Vector3.new(-0.064, 0.835, -0)
  game.Players.LocalPlayer.Backpack.BoomBox.GripRight =  Vector3.new(-0, -0, -1)
  game.Players.LocalPlayer.Backpack.BoomBox.GripUp =  Vector3.new(-1, 0, 0)
- wait(0.2)
+ wait()
  game.Players.LocalPlayer:findFirstChildOfClass('Backpack')['BoomBox'].Parent = game.Players.LocalPlayer.Character
- wait(0.2)
+ wait()
  h = game.Players.LocalPlayer.Character.Humanoid
  tracks = h:GetPlayingAnimationTracks()
  for _,x in pairs(tracks)
@@ -7630,7 +7630,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 			 tool.Parent = character
 		 end
 	 end
-	 wait(0.5)
+	 wait()
 	 for _, tool in pairs(character:GetChildren()) do
 		 if tool:IsA("Tool") then
 			 wrap(function()
@@ -7658,7 +7658,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 							 while part and part.Parent and tool.Parent == character do
 								 rotX, rotY = rotX + speed, rotY + speed
 								 a1.Position = Vector3.new(math.sin(rotX) * n, y, math.sin(rotY) * n)
-								 RunService.RenderStepped:Wait(0)
+								 RunService.RenderStepped:Wait()
 							 end
 						 end)
 					 end
@@ -8151,7 +8151,7 @@ print(text)
 	 script.Parent.MouseButton1Click:Connect(function()
 		 -- This basically makes roblox unable to log your chat messages sent in-game. Meaning if you get reported for saying something bad, you won't get banned!
 		 -- Store in autoexec folder
-		 -- Credits: AnthonyIsntHere and ArianBlaack
+		 -- Credits: HAKAI_OFC
 	 
 	 --[[
 		 Change-logs:
@@ -8560,7 +8560,7 @@ print(Time)
  
  cmd.add({"fling2"}, {"fling2 <player>", "Fling the given player 2"}, function(...)
  Target = (...)
- flinghh = 10000
+ flinghh = 1000000
  
  target = getPlr(Target)
  game.Workspace.CurrentCamera.CameraSubject = target.Character.Humanoid
@@ -8591,7 +8591,7 @@ print(Time)
  spawn(function()
 	 carpetLoop = game:GetService('RunService').Heartbeat:Connect(function()
 		 pcall(function()
-			 if tTorso.Velocity.magnitude <= 28 then -- if target uses netless just target their local position
+			 if tTorso.Velocity.magnitude <= 280 then -- if target uses netless just target their local position
 				 local pos = {x=0, y=0, z=0}
 				 pos.x = tTorso.Position.X
 				 pos.y = tTorso.Position.Y
@@ -8771,7 +8771,7 @@ print(Time)
 			repeat
 				if RootPart and THumanoid then
 					if BasePart.Velocity.Magnitude < 50 then
-						Angle = Angle + 100
+						Angle = Angle + 1000000
  
 						FPos(BasePart, CFrame.new(0, 1.5, 0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle),0 ,0))
 						task.wait()
@@ -8824,7 +8824,7 @@ print(Time)
 				else
 					break
 				end
-			until BasePart.Velocity.Magnitude > 5000 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or THumanoid.Sit or Humanoid.Health <= 0 or tick() > Time + TimeToWait
+			until BasePart.Velocity.Magnitude > 500000 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or THumanoid.Sit or Humanoid.Health <= 0 or tick() > Time + TimeToWait
 		end
 		
 		workspace.FallenPartsDestroyHeight = 0/0
@@ -8996,7 +8996,7 @@ end
 			repeat
 				if RootPart and THumanoid then
 					if BasePart.Velocity.Magnitude < 50 then
-						Angle = Angle + 100
+						Angle = Angle + 100000
  
 						FPos(BasePart, CFrame.new(0, 1.5, 0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle),0 ,0))
 						task.wait()
@@ -9049,7 +9049,7 @@ end
 				else
 					break
 				end
-			until BasePart.Velocity.Magnitude > 5000 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or THumanoid.Sit or Humanoid.Health <= 0 or tick() > Time + TimeToWait
+			until BasePart.Velocity.Magnitude > 500000 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or THumanoid.Sit or Humanoid.Health <= 0 or tick() > Time + TimeToWait
 		end
 		
 		workspace.FallenPartsDestroyHeight = 0/0
@@ -9126,17 +9126,17 @@ end
 		 local A_2 = "All"
 		 local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
 		 Event:FireServer(A_1, A_2)
-		 wait(0.1)
+		 wait()
 		 local A_1 = "I will oof"
 		 local A_2 = "All"
 		 local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
 		 Event:FireServer(A_1, A_2)
-		 wait(0.1)
+		 wait()
 		 local A_1 = "Goodbye."
 		 local A_2 = "All"
 		 local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
 		 Event:FireServer(A_1, A_2)
-		 wait(0.1)
+		 wait()
 		 LocalPlayer = game:GetService("Players").LocalPlayer
 		 LocalPlayer.Character.Humanoid:MoveTo(LocalPlayer.Character.HumanoidRootPart.Position + LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 10)
 		 game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
@@ -9212,7 +9212,7 @@ getChar().HumanoidRootPart.CFrame = target.Character.Humanoid.RootPart.CFrame
  end)
  
  cmd.add({"pp", "penis"}, {"penis (pp)", "benis :flushed:"}, function()
- loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/HakaiAdmin/main/pp"))()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/pp"))()
  end)
  
  cmd.add({"stealaudio", "getaudio", "steal", "logaudio"}, {"stealaudio <player> (getaudio, logaudio, steal)", "Save all sounds a player is playing to a file  -Cyrus"}, function(p)
@@ -9561,7 +9561,7 @@ getChar().HumanoidRootPart.CFrame = target.Character.Humanoid.RootPart.CFrame
 				  Player.Character.HumanoidRootPart.CFrame = CF
 				  wait()
 			  end
-			  wait(.3)
+			  wait()
 			  Player.Character:SetPrimaryPartCFrame(CF)
 			  if Humanoid.RigType == Enum.HumanoidRigType.R6 then
 				  Character["Right Arm"].RightGrip:Destroy()
@@ -9570,7 +9570,7 @@ getChar().HumanoidRootPart.CFrame = target.Character.Humanoid.RootPart.CFrame
 				  Character["RightHand"].RightGripAttachment:Destroy()
 			  end
 				  
-			  wait(0.2)
+			  wait()
 			  CF = Player.Character.HumanoidRootPart.CFrame
 			  player.CharacterAdded:wait(0.1):waitForChild("HumanoidRootPart").CFrame = CF
  end)
@@ -9636,10 +9636,10 @@ getChar().HumanoidRootPart.CFrame = target.Character.Humanoid.RootPart.CFrame
 	 firetouchinterest(MainTool.Handle, TRootPart, 1)
 	 wait()
  until flag
- wait(0.2)
+ wait()
  Player.Character.HumanoidRootPart.CFrame = CFrame.new(0,-1000,0)
  end
- wait(0.1)
+ wait()
  respawn()
  end)
  
@@ -9732,14 +9732,14 @@ getChar().HumanoidRootPart.CFrame = target.Character.Humanoid.RootPart.CFrame
 	 
 	 
 	 rm()
-	 wait(0.1)
+	 wait()
 	 Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
-	 wait(0.2)
+	 wait()
 	 
 	 rm()
-	 wait(0.5)
+	 wait()
 	 Humanoid:FindFirstChild("BodyTypeScale"):Destroy()
-	 wait(0.2)
+	 wait()
  end)
  
  cmd.add({"small"}, {"small", "Makes you short r15 only"}, function()
@@ -9871,7 +9871,7 @@ end
 	end
  
 	if Character and Humanoid and RootPart then
-		if RootPart.Velocity.Magnitude < 50 then
+		if RootPart.Velocity.Magnitude < 50000 then
 			getgenv().OldPos = RootPart.CFrame
 		end
 		if THumanoid and THumanoid.Sit and not AllBool then
@@ -9903,7 +9903,7 @@ end
 			repeat
 				if RootPart and THumanoid then
 					if BasePart.Velocity.Magnitude < 50 then
-						Angle = Angle + 100
+						Angle = Angle + 100000
  
 						FPos(BasePart, CFrame.new(0, 1.5, 0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 1.25, CFrame.Angles(math.rad(Angle),0 ,0))
 						task.wait()
@@ -9956,7 +9956,7 @@ end
 				else
 					break
 				end
-			until BasePart.Velocity.Magnitude > 5000 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or THumanoid.Sit or Humanoid.Health <= 0 or tick() > Time + TimeToWait
+			until BasePart.Velocity.Magnitude > 50000 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or THumanoid.Sit or Humanoid.Health <= 0 or tick() > Time + TimeToWait
 		end
 		
 		workspace.FallenPartsDestroyHeight = 0/0
@@ -10136,7 +10136,7 @@ end
  cmd.add({"unloopwalkspeed", "unloopws"}, {"unloopwalkspeed <speed> (unloopws)", "Disable loop walkspeed"}, function(...)
 	 loopws = false
 	 detectdied:Disconnect()
-	 wait(0.2)
+	 wait()
 	 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 35
  end)
  
@@ -10147,7 +10147,7 @@ end
 	Target = getPlr(Player)
 	local oldcframe = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 	repeat wait()
-		wait(0.2)
+		wait()
 		targetcframe = Target.Character.HumanoidRootPart.CFrame
 	WaveAnim = Instance.new("Animation")
 				if game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').RigType == Enum.HumanoidRigType.R15 then
@@ -10163,7 +10163,7 @@ end
 						Players.LocalPlayer.Character:SetPrimaryPartCFrame(NewCFrame)
 	wave = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(WaveAnim)
 	wave:Play(-1, 5, -1)
-	wait(0.3)
+	wait()
 	wave:Stop()
 			until loopwave == false
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldcframe
@@ -10194,7 +10194,7 @@ end
 					 Players.LocalPlayer.Character:SetPrimaryPartCFrame(NewCFrame)
  wave = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(WaveAnim)
  wave:Play(-1, 5, -1)
- wait(0.3)
+ wait()
  wave:Stop()
  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldcframe
  end)
@@ -10205,7 +10205,7 @@ end
 	 speed = d
  
 	 if speed == nil then
- speed = 1000
+ speed = 1000000
 	 end
 	 
 	 Username = h
@@ -10871,7 +10871,7 @@ until glueloop == false
 							 
 						 wait()
 						 CF = Player.Character.HumanoidRootPart.CFrame
-						 player.CharacterAdded:wait(0.01):waitForChild("HumanoidRootPart").CFrame = CF
+						 player.CharacterAdded:wait(0.001):waitForChild("HumanoidRootPart").CFrame = CF
 						 end
 						 wait()
 			 respawn()
@@ -10959,7 +10959,7 @@ until glueloop == false
 					 local c = game.Players.LocalPlayer.Character
 					 game.Players.LocalPlayer.Character = nil
 						 game.Players.LocalPlayer.Character = c
-						 wait(game.Players.RespawnTime - 0.45)
+						 wait(game.Players.RespawnTime - 0.001)
 				 game.Players.LocalPlayer.Character.Humanoid.Name = 1
 				 local l = game.Players.LocalPlayer.Character["1"]:Clone()
 				 l.Parent = game.Players.LocalPlayer.Character
@@ -11421,7 +11421,7 @@ until glueloop == false
 						 local Timer = os.time()
 					 
 						 repeat
-							 if (TRootPart.CFrame.p - RootPart.CFrame.p).Magnitude < 500 then
+							 if (TRootPart.CFrame.p - RootPart.CFrame.p).Magnitude < 600 then
 								 Tool.Grip = CFrame.new()
 								 Tool.Grip = Handle.CFrame:ToObjectSpace(TRootPart.CFrame):Inverse()
 							 end
@@ -11520,7 +11520,7 @@ until glueloop == false
 	 if Username == "all" or Username == "others" then
 		 Loopbring = true
 		 repeat wait()
-			 wait(0.3)
+			 wait()
 		 print("Patched")
 		 until Loopbring == false
  else
@@ -11596,7 +11596,7 @@ until glueloop == false
 		 wait(0.4)
 	CF = Player.Character.HumanoidRootPart.CFrame
 			 player.CharacterAdded:wait():waitForChild("HumanoidRootPart").CFrame = CF
-						 wait(0.2)
+						 wait()
  until Loopbring == false
  end
  end)
@@ -11786,7 +11786,7 @@ until glueloop == false
 								 v.Parent = game.Players.LocalPlayer.Character
 						 end
 				 end
-				 wait(.1)
+				 wait()
 				 for i,v in next, game.Players.LocalPlayer.Character:GetChildren() do
 						 if v:IsA'Tool' then
 								 table.insert(tools, v)
@@ -11954,7 +11954,7 @@ until glueloop == false
 				 end)
 				 
 								 cmd.add({"Hakai"}, {"Hakai", "Makes your hats visible but not your name or your body"}, function()
- loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/Hakai"))()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/Nameless"))()
  end)
  
  
@@ -12028,7 +12028,7 @@ until glueloop == false
  Duration = 5;
  
  });
-	  -- made by joshclark756#7155
+	  -- made by HAKAI_OFC
  local mouse = game.Players.LocalPlayer:GetMouse()
  local uis = game:GetService("UserInputService")
  
@@ -12389,7 +12389,7 @@ until glueloop == false
 	 speaker.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
 	 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (...)
 	 if (...) == nil then
-			 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 999
+			 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 9999999
 			 end
  end)
  
@@ -12412,7 +12412,7 @@ until glueloop == false
 	 speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.StrafingNoPhysics,true)
 	 speaker.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Swimming,true)
 	 speaker.Character.Humanoid:ChangeState(Enum.HumanoidStateType.RunningNoPhysics)
-	 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 999
+	 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 9999999
  end)
  
  cmd.add({"esppart", "partesp"}, {"esppart {partname} (partesp)", "Makes you be able to see any part"}, function(...)
