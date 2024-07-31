@@ -7724,7 +7724,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 		 
 		 local Noclipping = nil
 		 Clip = false
-		 wait(0.1)
+		 wait()
 		 local function NoclipLoop()
 		 if Clip == false and game.Players.LocalPlayer.Character ~= nil then
 		 for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
@@ -7742,8 +7742,8 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 		 child.CustomPhysicalProperties = PhysicalProperties.new(math.huge, 0.3, 0.5)
 		 end
 		 end
-		 wait(.1)
-		 wait(.1)
+		 wait()
+		 wait()
 		 local bambam = Instance.new("BodyAngularVelocity")
 		 bambam.Name = "0"
 		 bambam.Parent = getRoot(game.Players.LocalPlayer.Character)
@@ -7764,7 +7764,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 		 flingDied:Disconnect()
 		 end
 		 flinging = false
-		 wait(.1)
+		 wait()
 		 local speakerChar = game.Players.LocalPlayer.Character
 		 if not speakerChar or not getRoot(speakerChar) then return end
 		 for i,v in pairs(getRoot(speakerChar):GetChildren()) do
@@ -7780,10 +7780,10 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 		 end
 		 flingDied = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').Died:Connect(flingDiedF)
 		 repeat
-		 bambam.AngularVelocity = Vector3.new(0,99999,0)
-		 wait(.2)
+		 bambam.AngularVelocity = Vector3.new(0,9999999,0)
+		 wait()
 		 bambam.AngularVelocity = Vector3.new(0,0,0)
-		 wait(.1)
+		 wait()
 		 until flinging == false
  end)
  
@@ -7797,7 +7797,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 		 flingDied:Disconnect()
 		 end
 		 flinging = false
-		 wait(.1)
+		 wait()
 		 local speakerChar = game.Players.LocalPlayer.Character
 		 if not speakerChar or not getRoot(speakerChar) then return end
 		 for i,v in pairs(getRoot(speakerChar):GetChildren()) do
@@ -7824,7 +7824,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
  local index = 1
  while targetParts[index] do
 	 game.Players.LocalPlayer.Character:MoveTo(targetParts[index].Position)
-	 repeat wait(0.04) until (game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude == 0) or (targetParts[index].Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 10
+	 repeat wait() until (game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude == 0) or (targetParts[index].Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 10
 	 index = index + 1
  end
  end)
